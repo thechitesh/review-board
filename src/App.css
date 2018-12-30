@@ -22,6 +22,20 @@
   color:floralwhite;
 }
 
+.intro{
+  padding:30px 10px 30px 10px;
+  margin:0px auto;
+  background: #9575CD ;
+  color:floralwhite;
+}
+
+.comment{
+  padding:30px 10px 30px 10px;
+  margin:0px auto;
+  background: #cecac4 ;
+  color:floralwhite;
+}
+
 address{
   font-size:80%;
   margin:0px;

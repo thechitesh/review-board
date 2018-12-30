@@ -38,7 +38,7 @@ class Header extends Component{
                 <NavbarToggler onClick={this.toggleNav}/>
                 <NavbarBrand className="mr-auto" href="/">
                     <img src="assets/chi.png" height="30" width="41" 
-                    alt="Restaurant Con Fusion" />
+                    alt="Green Board" />
                 </NavbarBrand>
                 <Collapse isOpen={this.state.isNavOpen} navbar>
                 <Nav navbar>
@@ -53,8 +53,8 @@ class Header extends Component{
                         </NavLink>
                     </NavItem>
                     <NavItem>
-                        <NavLink className="nav-link" to="/menu">
-                            <span className="fa fa-list fa-lg"></span> Menu
+                        <NavLink className="nav-link" to="/review">
+                            <span className="fa fa-list fa-lg"></span> Review Board
                         </NavLink>
                     </NavItem>
                     <NavItem>

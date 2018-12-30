@@ -1,13 +1,10 @@
 import {createStore, combineReducers } from 'redux';
-import {Positive} from './Positive';
-import {Negative} from './Negative';
-
+import {Comments} from './Comments';
 
 export const ConfigureStore =() =>{
     const store = createStore( 
         combineReducers({
-            positive: Positive,
-            negative: Negative
+            comments: Comments
         })
     );
     return store;

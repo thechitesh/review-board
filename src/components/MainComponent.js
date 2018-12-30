@@ -7,11 +7,11 @@ import {NEGATIVE} from '../shared/negativeComments';
 import {POSITIVE} from '../shared/positiveComments';
 import {connect } from 'react-redux';
 import {addComment} from '../redux/ActionCreators';
+import ReviewBoard from './ReviewBoardComponent';
 
 const mapStateToProps = state => {
     return{
-        positive: state.positive,
-        negative: state.negative
+        comments: state.comments
     };    
   }
 
@@ -25,15 +25,20 @@ class Main extends Component{
         super(props);
     }
 
-
     render(){
         return(
             <div>
                 <Header /> 
-                    <Home negative = {this.props.negative}
-                          positive = {this.props.positive}
-                          addComment = {this.props.addComment}
-                    />
+                <Switch>
+                    <Route path="/home" component ={Home}/>
+
+                    <Route exact path="/review" component = {()=> <ReviewBoard comments = {this.props.comments}
+                        addComment = {this.props.addComment}/>} />
+                    <Route path="/contactus" />
+                    <Route path="/aboutus" />
+                    <Redirect to="/home" />
+                </Switch>
+                
                 <Footer />
             </div>
         );
