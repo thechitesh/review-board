@@ -8,6 +8,7 @@ import {POSITIVE} from '../shared/positiveComments';
 import {connect } from 'react-redux';
 import {addComment} from '../redux/ActionCreators';
 import ReviewBoard from './ReviewBoardComponent';
+import Review from './ReviewBoard';
 
 const mapStateToProps = state => {
     return{
@@ -23,6 +24,30 @@ class Main extends Component{
 
     constructor(props){
         super(props);
+        this.state = {
+            comments:[]
+        }
+    }
+
+    componentDidMount(){
+        fetch("http://localhost:1234/comments")
+        .then(res => {
+            var json1 = res.json()
+            return json1;
+        })
+        .then(result => {
+            // var response = JSON.parse(result);
+            // console.log("respnse :"+response);
+            this.setState({
+                comments : result.comments
+            });
+
+            console.log("comments "+JSON.stringify(this.state.comments));            
+        })
+        .catch( err => {
+            console.log(err);
+        });
+
     }
 
     render(){
@@ -32,7 +57,7 @@ class Main extends Component{
                 <Switch>
                     <Route path="/home" component ={Home}/>
 
-                    <Route exact path="/review" component = {()=> <ReviewBoard comments = {this.props.comments}
+                    <Route exact path="/review" component = {()=> <Review comments = {this.state.comments}
                         addComment = {this.props.addComment}/>} />
                     <Route path="/contactus" />
                     <Route path="/aboutus" />
