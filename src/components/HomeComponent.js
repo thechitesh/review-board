@@ -7,7 +7,8 @@ const Home = (props) =>{
 
     return(
         <div className="container intro">
-            This is home Component
+           The application is developed to support the team activities, which involves sharing of
+           data or thoughts about our day to day activity.
         </div>
     );
         

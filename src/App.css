@@ -10,6 +10,10 @@
   min-height:400px;
 }
 
+.navHeader{
+  background-color: orchid
+}
+
 .footer{
   background-color: #D1C4E9;
   margin:0px auto;
@@ -27,6 +31,24 @@
   margin:0px auto;
   background: #9575CD ;
   color:floralwhite;
+}
+
+.tabHead{
+  
+  padding:30px 10px 10px 10px;
+  margin:0px auto;
+  background: lightgray ;
+  color: black;
+  font-style: oblique;
+
+}
+
+.cardTxt{
+  background-color: powderblue
+}
+
+.cardAuthor{
+  background-color: burlywood
 }
 
 .comment{

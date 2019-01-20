@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 
-import {Card, CardText, CardBody, CardFooter, CardSubtitle, Modal, ModalHeader, ModalBody,  Button,Label, Col, Row} from 'reactstrap';
+import { Modal, ModalHeader, ModalBody,  Button,Label, Col, Row} from 'reactstrap';
 import {Control, LocalForm, Errors} from 'react-redux-form';
 
 
@@ -45,19 +45,19 @@ class CommentForm extends Component{
     render(){
         return(
             <div>
-                <Button className="bg-light btn-light" onClick={this.toggleModal}>Submit Comment</Button>
+                <Button className="bg-light btn-light" onClick={this.toggleModal}>Add Your Comment</Button>
                 <Modal isOpen={this.state.isModalOpen} toggle={this.toggleModal}>
-                <ModalHeader toggle={this.toggleModal}>Submit Comment</ModalHeader>
+                <ModalHeader toggle={this.toggleModal}>Your Comment</ModalHeader>
                 <ModalBody>
                     <LocalForm onSubmit={(values) => this.handleSubmit(values)}>
                         <Row className="form-group">
-                            <Label htmlFor="rating" md={3}>Rating</Label>
+                            <Label htmlFor="section" md={3}>You Feel</Label>
                             <Col md={{size:9}}>
-                                    <Control.select model=".rating" name="rating" 
+                                    <Control.select model=".section" name="section" 
                                     className="form-control">
                                         <option>--select--</option>
-                                        <option>positive</option>
-                                        <option>negative</option>                                        
+                                        <option>Happy</option>
+                                        <option>UnHappy</option>                                        
                                     </Control.select>
                             </Col>
                         </Row>
